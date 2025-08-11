@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tryonnix Color Scheme Mockups</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+            overflow-x: auto;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .scheme-container {
+            margin-bottom: 60px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .scheme-header {
+            padding: 20px 30px;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .scheme-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+        
+        .scheme-description {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .mockup-wrapper {
+            padding: 0;
+        }
+        
+        .mockup {
+            width: 100%;
+            min-height: 600px;
+            position: relative;
+        }
+        
+        /* Navigation */
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 80px 30px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.02) 100%);
+        }
+        
+        .hero h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.8;
+        }
+        
+        .hero-cta {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        
+        .secondary-btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            border: 2px solid;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        /* Features */
+        .features {
+            padding: 60px 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .feature-card p {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        /* Stats */
+        .stats {
+            padding: 60px 30px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item h4 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            opacity: 0.7;
+            font-weight: 500;
+        }
+        
+        /* Scheme 1: Tech Innovation */
+        .scheme1 {
+            --primary: #0066FF;
+            --secondary: #8B5CF6;
+            --accent: #00FFFF;
+            --neutral: #2D3748;
+            --bg: #FFFFFF;
+        }
+        
+        .scheme1 .nav { background: var(--bg); }
+        .scheme1 .logo { color: var(--primary); }
+        .scheme1 .nav-link { color: var(--neutral); }
+        .scheme1 .nav-link:hover { color: var(--primary); }
+        .scheme1 .cta-btn { background: var(--secondary); color: white; }
+        .scheme1 .cta-btn:hover { background: var(--primary); }
+        .scheme1 .hero { background: var(--bg); }
+        .scheme1 .hero h2 { color: var(--neutral); }
+        .scheme1 .hero p { color: var(--neutral); }
+        .scheme1 .hero-cta { background: var(--primary); color: white; }
+        .scheme1 .hero-cta:hover { background: var(--secondary); }
+        .scheme1 .secondary-btn { border-color: var(--secondary); color: var(--secondary); }
+        .scheme1 .secondary-btn:hover { background: var(--secondary); color: white; }
+        .scheme1 .features { background: #f8faff; }
+        .scheme1 .feature-card { background: var(--bg); box-shadow: 0 4px 20px rgba(0,102,255,0.1); }
+        .scheme1 .feature-icon { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+        .scheme1 .feature-card h3 { color: var(--neutral); }
+        .scheme1 .feature-card p { color: var(--neutral); }
+        .scheme1 .stats { background: var(--neutral); }
+        .scheme1 .stat-item h4 { color: var(--accent); }
+        .scheme1 .stat-item p { color: white; }
+        
+        /* Scheme 2: Fashion Forward Luxe */
+        .scheme2 {
+            --primary: #8B1538;
+            --secondary: #E8B4B8;
+            --accent: #F7E7CE;
+            --neutral: #6B7280;
+            --bg: #FAFAFA;
+        }
+        
+        .scheme2 .nav { background: var(--bg); }
+        .scheme2 .logo { color: var(--primary); }
+        .scheme2 .nav-link { color: var(--neutral); }
+        .scheme2 .nav-link:hover { color: var(--primary); }
+        .scheme2 .cta-btn { background: var(--primary); color: white; }
+        .scheme2 .cta-btn:hover { background: var(--secondary); color: var(--primary); }
+        .scheme2 .hero { background: var(--bg); }
+        .scheme2 .hero h2 { color: var(--primary); }
+        .scheme2 .hero p { color: var(--neutral); }
+        .scheme2 .hero-cta { background: var(--primary); color: white; }
+        .scheme2 .hero-cta:hover { background: var(--secondary); color: var(--primary); }
+        .scheme2 .secondary-btn { border-color: var(--secondary); color: var(--primary); }
+        .scheme2 .secondary-btn:hover { background: var(--secondary); color: var(--primary); }
+        .scheme2 .features { background: var(--accent); }
+        .scheme2 .feature-card { background: white; box-shadow: 0 4px 20px rgba(139,21,56,0.1); }
+        .scheme2 .feature-icon { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+        .scheme2 .feature-card h3 { color: var(--primary); }
+        .scheme2 .feature-card p { color: var(--neutral); }
+        .scheme2 .stats { background: var(--primary); }
+        .scheme2 .stat-item h4 { color: var(--accent); }
+        .scheme2 .stat-item p { color: var(--secondary); }
+        
+        /* Scheme 3: Digital Minimalist */
+        .scheme3 {
+            --primary: #1E293B;
+            --secondary: #14B8A6;
+            --accent: #FF6B35;
+            --neutral: #64748B;
+            --bg: #F8FAFC;
+        }
+        
+        .scheme3 .nav { background: var(--bg); }
+        .scheme3 .logo { color: var(--primary); }
+        .scheme3 .nav-link { color: var(--neutral); }
+        .scheme3 .nav-link:hover { color: var(--secondary); }
+        .scheme3 .cta-btn { background: var(--secondary); color: white; }
+        .scheme3 .cta-btn:hover { background: var(--accent); }
+        .scheme3 .hero { background: var(--bg); }
+        .scheme3 .hero h2 { color: var(--primary); }
+        .scheme3 .hero p { color: var(--neutral); }
+        .scheme3 .hero-cta { background: var(--secondary); color: white; }
+        .scheme3 .hero-cta:hover { background: var(--accent); }
+        .scheme3 .secondary-btn { border-color: var(--accent); color: var(--accent); }
+        .scheme3 .secondary-btn:hover { background: var(--accent); color: white; }
+        .scheme3 .features { background: #f1f5f9; }
+        .scheme3 .feature-card { background: white; box-shadow: 0 4px 20px rgba(30,41,59,0.08); }
+        .scheme3 .feature-icon { background: linear-gradient(135deg, var(--secondary), var(--accent)); color: white; }
+        .scheme3 .feature-card h3 { color: var(--primary); }
+        .scheme3 .feature-card p { color: var(--neutral); }
+        .scheme3 .stats { background: var(--primary); }
+        .scheme3 .stat-item h4 { color: var(--secondary); }
+        .scheme3 .stat-item p { color: #94a3b8; }
+        
+        /* Scheme 4: Vibrant Innovation */
+        .scheme4 {
+            --primary: #D946EF;
+            --secondary: #3B82F6;
+            --accent: #84CC16;
+            --neutral: #475569;
+            --bg: #FFFFFF;
+        }
+        
+        .scheme4 .nav { background: var(--bg); }
+        .scheme4 .logo { color: var(--primary); }
+        .scheme4 .nav-link { color: var(--neutral); }
+        .scheme4 .nav-link:hover { color: var(--secondary); }
+        .scheme4 .cta-btn { background: var(--primary); color: white; }
+        .scheme4 .cta-btn:hover { background: var(--secondary); }
+        .scheme4 .hero { background: linear-gradient(135deg, #fdf4ff 0%, #f0f9ff 100%); }
+        .scheme4 .hero h2 { color: var(--neutral); }
+        .scheme4 .hero p { color: var(--neutral); }
+        .scheme4 .hero-cta { background: var(--primary); color: white; }
+        .scheme4 .hero-cta:hover { background: var(--secondary); }
+        .scheme4 .secondary-btn { border-color: var(--accent); color: var(--accent); }
+        .scheme4 .secondary-btn:hover { background: var(--accent); color: white; }
+        .scheme4 .features { background: #fefce8; }
+        .scheme4 .feature-card { background: white; box-shadow: 0 4px 20px rgba(217,70,239,0.1); }
+        .scheme4 .feature-icon { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+        .scheme4 .feature-card h3 { color: var(--neutral); }
+        .scheme4 .feature-card p { color: var(--neutral); }
+        .scheme4 .stats { background: var(--neutral); }
+        .scheme4 .stat-item h4 { color: var(--accent); }
+        .scheme4 .stat-item p { color: #e2e8f0; }
+        
+        /* Scheme 5: Professional Trust */
+        .scheme5 {
+            --primary: #1E40AF;
+            --secondary: #0891B2;
+            --accent: #059669;
+            --neutral: #6B7280;
+            --bg: #F1F5F9;
+        }
+        
+        .scheme5 .nav { background: var(--bg); }
+        .scheme5 .logo { color: var(--primary); }
+        .scheme5 .nav-link { color: var(--neutral); }
+        .scheme5 .nav-link:hover { color: var(--secondary); }
+        .scheme5 .cta-btn { background: var(--primary); color: white; }
+        .scheme5 .cta-btn:hover { background: var(--secondary); }
+        .scheme5 .hero { background: var(--bg); }
+        .scheme5 .hero h2 { color: var(--primary); }
+        .scheme5 .hero p { color: var(--neutral); }
+        .scheme5 .hero-cta { background: var(--primary); color: white; }
+        .scheme5 .hero-cta:hover { background: var(--secondary); }
+        .scheme5 .secondary-btn { border-color: var(--accent); color: var(--accent); }
+        .scheme5 .secondary-btn:hover { background: var(--accent); color: white; }
+        .scheme5 .features { background: #e0f2fe; }
+        .scheme5 .feature-card { background: white; box-shadow: 0 4px 20px rgba(30,64,175,0.08); }
+        .scheme5 .feature-icon { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; }
+        .scheme5 .feature-card h3 { color: var(--primary); }
+        .scheme5 .feature-card p { color: var(--neutral); }
+        .scheme5 .stats { background: var(--primary); }
+        .scheme5 .stat-item h4 { color: var(--accent); }
+        .scheme5 .stat-item p { color: #cbd5e1; }
+        
+        .scheme-nav {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background: white;
+            border-radius: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            padding: 10px;
+            z-index: 1000;
+        }
+        
+        .scheme-nav button {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .scheme-nav button:hover {
+            transform: scale(1.1);
+        }
+        
+        .scheme-nav .btn1 { background: #0066FF; }
+        .scheme-nav .btn2 { background: #8B1538; }
+        .scheme-nav .btn3 { background: #1E293B; }
+        .scheme-nav .btn4 { background: #D946EF; }
+        .scheme-nav .btn5 { background: #1E40AF; }
+        
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .features { grid-template-columns: 1fr; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .nav-links { display: none; }
+            .scheme-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tryonnix Color Scheme Mockups</h1>
+        
+        <!-- Scheme 1: Tech Innovation -->
+        <div class="scheme-container">
+            <div class="scheme-header">
+                <div class="scheme-title">1. Tech Innovation Scheme (Recommended)</div>
+                <div class="scheme-description">Perfect for conveying cutting-edge AI technology while maintaining professional appeal</div>
+            </div>
+            <div class="mockup-wrapper">
+                <div class="mockup scheme1">
+                    <nav class="nav">
+                        <div class="logo">Tryonnix</div>
+                        <div class="nav-links">
+                            <a href="#" class="nav-link">Solutions</a>
+                            <a href="#" class="nav-link">Pricing</a>
+                            <a href="#" class="nav-link">About</a>
+                            <a href="#" class="nav-link">Contact</a>
+                        </div>
+                        <a href="#" class="cta-btn">Get Started</a>
+                    </nav>
+                    
+                    <section class="hero">
+                        <h2>AI-Enhanced Virtual Try-On Platform</h2>
+                        <p>Transform your fashion e-commerce with cutting-edge virtual try-on technology. Reduce returns by 60% and boost customer satisfaction.</p>
+                        <a href="#" class="cta-btn hero-cta">Start Free Trial</a>
+                        <button class="secondary-btn">Watch Demo</button>
+                    </section>
+                    
+                    <section class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon">AI</div>
+                            <h3>AI-Powered Fitting</h3>
+                            <p>Advanced machine learning algorithms ensure accurate virtual garment fitting across diverse body types and sizes.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">3D</div>
+                            <h3>3D Visualization</h3>
+                            <p>Real-time 3D garment simulation provides immersive shopping experiences on high-performance devices.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">IoT</div>
+                            <h3>Smart Mirrors</h3>
+                            <p>IoT-enabled smart mirrors for in-store experiences that bridge physical and digital shopping.</p>
+                        </div>
+                    </section>
+                    
+                    <section class="stats">
+                        <div class="stat-item">
+                            <h4>60%</h4>
+                            <p>Reduction in Returns</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>$1B</h4>
+                            <p>Market Opportunity</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>2026</h4>
+                            <p>Target Growth Year</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>24/7</h4>
+                            <p>Platform Availability</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scheme 2: Fashion Forward Luxe -->
+        <div class="scheme-container">
+            <div class="scheme-header">
+                <div class="scheme-title">2. Fashion Forward Luxe</div>
+                <div class="scheme-description">Appeals to premium fashion brands with sophisticated, upscale aesthetic</div>
+            </div>
+            <div class="mockup-wrapper">
+                <div class="mockup scheme2">
+                    <nav class="nav">
+                        <div class="logo">Tryonnix</div>
+                        <div class="nav-links">
+                            <a href="#" class="nav-link">Solutions</a>
+                            <a href="#" class="nav-link">Pricing</a>
+                            <a href="#" class="nav-link">About</a>
+                            <a href="#" class="nav-link">Contact</a>
+                        </div>
+                        <a href="#" class="cta-btn">Get Started</a>
+                    </nav>
+                    
+                    <section class="hero">
+                        <h2>Luxury Virtual Fashion Experience</h2>
+                        <p>Elevate your brand with premium virtual try-on technology that reflects the sophistication of high-end fashion.</p>
+                        <a href="#" class="cta-btn hero-cta">Explore Premium</a>
+                        <button class="secondary-btn">View Gallery</button>
+                    </section>
+                    
+                    <section class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon">✨</div>
+                            <h3>Luxury Experience</h3>
+                            <p>Premium virtual try-on experiences that maintain the exclusivity and quality of luxury fashion brands.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">👗</div>
+                            <h3>Fashion Analytics</h3>
+                            <p>Comprehensive insights into customer preferences and trending styles to inform design decisions.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🎯</div>
+                            <h3>Personalized Styling</h3>
+                            <p>AI-driven style recommendations that understand individual customer preferences and occasions.</p>
+                        </div>
+                    </section>
+                    
+                    <section class="stats">
+                        <div class="stat-item">
+                            <h4>98%</h4>
+                            <p>Customer Satisfaction</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>150+</h4>
+                            <p>Luxury Brands</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>50M+</h4>
+                            <p>Virtual Try-Ons</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>15ms</h4>
+                            <p>Response Time</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scheme 3: Digital Minimalist -->
+        <div class="scheme-container">
+            <div class="scheme-header">
+                <div class="scheme-title">3. Digital Minimalist</div>
+                <div class="scheme-description">Clean, modern approach perfect for SaaS dashboards and analytics interfaces</div>
+            </div>
+            <div class="mockup-wrapper">
+                <div class="mockup scheme3">
+                    <nav class="nav">
+                        <div class="logo">Tryonnix</div>
+                        <div class="nav-links">
+                            <a href="#" class="nav-link">Solutions</a>
+                            <a href="#" class="nav-link">Pricing</a>
+                            <a href="#" class="nav-link">About</a>
+                            <a href="#" class="nav-link">Contact</a>
+                        </div>
+                        <a href="#" class="cta-btn">Get Started</a>
+                    </nav>
+                    
+                    <section class="hero">
+                        <h2>Streamlined Virtual Try-On Platform</h2>
+                        <p>Clean, efficient technology that focuses on performance and user experience without unnecessary complexity.</p>
+                        <a href="#" class="cta-btn hero-cta">Start Building</a>
+                        <button class="secondary-btn">View Documentation</button>
+                    </section>
+                    
+                    <section class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Performance First</h3>
+                            <p>Optimized for speed and efficiency, ensuring smooth virtual try-on experiences across all devices.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📊</div>
+                            <h3>Advanced Analytics</h3>
+                            <p>Comprehensive dashboard with actionable insights to optimize your fashion e-commerce strategy.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🔧</div>
+                            <h3>Easy Integration</h3>
+                            <p>Simple APIs and SDKs that integrate seamlessly with existing e-commerce platforms and workflows.</p>
+                        </div>
+                    </section>
+                    
+                    <section class="stats">
+                        <div class="stat-item">
+                            <h4>99.9%</h4>
+                            <p>Uptime Guarantee</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>< 50ms</h4>
+                            <p>API Response Time</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>500+</h4>
+                            <p>Global Brands</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>24/7</h4>
+                            <p>Developer Support</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scheme 4: Vibrant Innovation -->
+        <div class="scheme-container">
+            <div class="scheme-header">
+                <div class="scheme-title">4. Vibrant Innovation</div>
+                <div class="scheme-description">High-energy scheme perfect for targeting younger demographics and emerging markets</div>
+            </div>
+            <div class="mockup-wrapper">
+                <div class="mockup scheme4">
+                    <nav class="nav">
+                        <div class="logo">Tryonnix</div>
+                        <div class="nav-links">
+                            <a href="#" class="nav-link">Solutions</a>
+                            <a href="#" class="nav-link">Pricing</a>
+                            <a href="#" class="nav-link">About</a>
+                            <a href="#" class="nav-link">Contact</a>
+                        </div>
+                        <a href="#" class="cta-btn">Get Started</a>
+                    </nav>
+                    
+                    <section class="hero">
+                        <h2>Revolutionary Fashion Technology</h2>
+                        <p>Experience the future of fashion with bold, innovative virtual try-on technology that breaks boundaries.</p>
+                        <a href="#" class="cta-btn hero-cta">Join Revolution</a>
+                        <button class="secondary-btn">Explore Innovation</button>
+                    </section>
+                    
+                    <section class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon">🚀</div>
+                            <h3>Next-Gen Technology</h3>
+                            <p>Cutting-edge AI and machine learning algorithms that push the boundaries of virtual fashion experiences.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🌟</div>
+                            <h3>Creative Freedom</h3>
+                            <p>Unlimited possibilities for fashion brands to showcase their creativity through immersive virtual experiences.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">💡</div>
+                            <h3>Innovation Hub</h3>
+                            <p>Collaborative platform where fashion meets technology to create groundbreaking shopping experiences.</p>
+                        </div>
+                    </section>
+                    
+                    <section class="stats">
+                        <div class="stat-item">
+                            <h4>10M+</h4>
+                            <p>Young Users</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>300%</h4>
+                            <p>Engagement Boost</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>85%</h4>
+                            <p>Mobile Usage</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>24h</h4>
+                            <p>Trend Updates</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scheme 5: Professional Trust -->
+        <div class="scheme-container">
+            <div class="scheme-header">
+                <div class="scheme-title">5. Professional Trust</div>
+                <div class="scheme-description">Builds credibility with enterprise clients while maintaining approachability</div>
+            </div>
+            <div class="mockup-wrapper">
+                <div class="mockup scheme5">
+                    <nav class="nav">
+                        <div class="logo">Tryonnix</div>
+                        <div class="nav-links">
+                            <a href="#" class="nav-link">Solutions</a>
+                            <a href="#" class="nav-link">Pricing</a>
+                            <a href="#" class="nav-link">About</a>
+                            <a href="#" class="nav-link">Contact</a>
+                        </div>
+                        <a href="#" class="cta-btn">Get Started</a>
+                    </nav>
+                    
+                    <section class="hero">
+                        <h2>Enterprise Virtual Try-On Solutions</h2>
+                        <p>Trusted by leading fashion enterprises worldwide. Reliable, scalable, and secure virtual try-on technology.</p>
+                        <a href="#" class="cta-btn hero-cta">Request Demo</a>
+                        <button class="secondary-btn">Enterprise Features</button>
+                    </section>
+                    
+                    <section class="features">
+                        <div class="feature-card">
+                            <div class="feature-icon">🛡️</div>
+                            <h3>Enterprise Security</h3>
+                            <p>Bank-grade security protocols and compliance standards to protect customer data and brand integrity.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">📈</div>
+                            <h3>Scalable Solutions</h3>
+                            <p>Infrastructure that grows with your business, handling millions of virtual try-ons with consistent performance.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">🤝</div>
+                            <h3>Dedicated Support</h3>
+                            <p>24/7 enterprise support with dedicated account managers and technical specialists for seamless operations.</p>
+                        </div>
+                    </section>
+                    
+                    <section class="stats">
+                        <div class="stat-item">
+                            <h4>99.99%</h4>
+                            <p>System Reliability</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>1000+</h4>
+                            <p>Enterprise Clients</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>ISO27001</h4>
+                            <p>Security Certified</p>
+                        </div>
+                        <div class="stat-item">
+                            <h4>< 1h</h4>
+                            <p>Support Response</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Floating Navigation -->
+    <div class="scheme-nav">
+        <button class="btn1" onclick="scrollToScheme(1)" title="Tech Innovation">1</button>
+        <button class="btn2" onclick="scrollToScheme(2)" title="Fashion Luxe">2</button>
+        <button class="btn3" onclick="scrollToScheme(3)" title="Digital Minimalist">3</button>
+        <button class="btn4" onclick="scrollToScheme(4)" title="Vibrant Innovation">4</button>
+        <button class="btn5" onclick="scrollToScheme(5)" title="Professional Trust">5</button>
+    </div>
+    
+    <script>
+        function scrollToScheme(schemeNumber) {
+            const schemes = document.querySelectorAll('.scheme-container');
+            if (schemes[schemeNumber - 1]) {
+                schemes[schemeNumber - 1].scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        // Add smooth hover effects
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 12px 40px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '';
+            });
+        });
+        
+        // Add interactive elements
+        document.querySelectorAll('.cta-btn, .secondary-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
